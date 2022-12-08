@@ -1,0 +1,156 @@
+ {% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <section id="dashboardHero">
+       <div class="container">
+        <div class="heading-dashboard">
+            <h2>Dashboard</h2>
+       </div>
+       <div class="dashboard-body">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sidebar">
+                  <ul class="list-dashboard">
+            
+            
+                    <li class="d-flex justify-content-center active-dashboard common-lies w-100">
+                        <a href="{% url 'user:seller_dashboard' request.user.id %}"><i class="fas fa-tachometer-alt icons"></i>Dashboard</a>
+                        
+                        </li>
+                    <li class="d-flex justify-content-center other-lies common-lies">
+                        <a href="{% url 'user:seller_product' request.user.id %}"><i class="fas fa-briefcase icons"></i>Products</a>
+                        
+                    <li class="d-flex justify-content-center other-lies common-lies">
+                        <a href="{% url 'product:seller_order' %}"><i class="fas fa-shopping-cart icons"></i>Orders</a>
+                        
+                    </li>
+                    <li class="d-flex justify-content-center other-lies common-lies">
+                        <a href="{% url 'user:vendor_settings' request.user.id %}"><i class="fas fa-cog icons"></i>Settings</a>
+                        
+                    </li>
+                    <li class="d-flex justify-content-center other-lies">
+                        <button><a href="{% url 'user:store_view' request.user.id %}" title="Visit Store"><i class="fas fa-external-link-alt"></i></a></button>
+                        <button><a href="{% url 'user:user_info' request.user.id %}"><i class="fas fa-user"></i></a></button>
+                        <button><a href="{% url 'accounts:logout' %}"><i class="fa-solid fa-power-off"></i></a></button>
+                    </li>
+                </ul>
+                  
+                </div>
+                </div>
+            <div class="col-md-5">
+                <div class="alert alert-danger" role="alert">
+                    Error! Your account is not enabled for selling, please contact the admin
+                  </div>
+                    <div class="statistics">
+                        <div class="sales ">
+                            <span>Sales</span>
+                            <p>$0.00</p>
+                        </div>
+                        <div class="earings">
+                            <span>Earing</span>
+                            <p>$0.00</p>
+                        </div>
+                        <div class="page-view">
+                            <span>Pageview</span>
+                            <p>0</p>
+                        </div>
+                        <div class="order">
+                            <span>Order</span>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    
+                       
+            </div>
+            <div class="col-md-4">
+                <div class="orders">
+                    <div class="heading-orders">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Orders</span>
+                    </div>
+                    <div class="details">
+                        <ul class="detail-list">
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Total</span>
+                                <span>0</span>
+                            </li>
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Complated</span>
+                                <span>0</span>
+                            </li>
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Pending</span>
+                                <span>0</span>
+                            </li>
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Processing</span>
+                                <span>0</span>
+                            </li>
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Cancelled</span>
+                                <span>0</span>
+                            </li>
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Refounded</span>
+                                <span>0</span>
+                            </li>
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>On Hold</span>
+                                <span>0</span>
+                            </li>
+                        </ul>
+                    </div>
+                 
+                </div>
+                <div class="products">
+                    <div class="heading-products">
+                     
+                        <div class="left-content">
+                            <i class="fas fa-briefcase" aria-hidden="true"></i>
+                            <span>Products</span>
+                        </div>
+                        <div class="right-content">
+                            <span>+ Add new product</span>
+                        </div>
+                       
+                    </div>
+                    <div class="details-products">
+                        <ul class="detail-product-list">
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Total</span>
+                                <span>0</span>
+                            </li>
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Live</span>
+                                <span>0</span>
+                            </li>   
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Ofline</span>
+                                <span>0</span>
+                            </li>   
+                            <li class="detail-row d-flex justify-content-center mt-3">
+                                <span>Pending Review</span>
+                                <span>0</span>
+                            </li>   
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+       </div>
+       </div>
+
+
+    </section>
+  
+    
+    
+{% endblock body %} 
+
+
+
+
+    

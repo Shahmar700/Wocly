@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+     {% comment %} <div class="ps-page--single">
+        <div class="ps-breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Pages</a></li>
+                    <li><a href="vendor-store.html">Vendor Pages</a></li>
+                    <li>Vendor Dashboard Free</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  <div class="ps-vendor-dashboard">
+        <div class="container">
+            <div class="ps-section__header">
+                <h3>Dasboard</h3>
+               
+            </div>
+          
+        </div>
+    </div> 
+    
+    <div class="free_bigdiv">
+       <div class="free_middiv">
+         <div class="free_div1">
+            
+            <ul class="dasbord_ul">
+            
+                <li><p><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<a href="#">Dashboard</a></p></li>
+                <li><p><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<a href="{% url 'user:seller_product' request.user.id %}">Products</a></p></li>
+                <li><p><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<a href="{% url 'user:seller_order' request.user.id %}">Order</a></p></li>
+                <li><p><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<a h    ref="{% url 'user:withdraw' request.user.id %}">Withdrafts</a></p></li>
+                <li><p><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<a href="{% url 'user:vendor_settings' request.user.id %}">Settings</a></p></li>
+            </ul>
+            <ul class="dasbord_ul1">
+                <li><i class="fas fa-external-link-alt"></i></li>
+                <li><i class="fas fa-external-link-alt"></i></li>
+                <li><i class="fas fa-external-link-alt"></i></li>
+            </ul>
+           
+         </div>
+         
+         
+       </div>
+    </div> {% endcomment %}
+    {% endblock body %} 
+
+
+
+
+    

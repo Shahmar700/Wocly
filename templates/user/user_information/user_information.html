@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+    <main class="ps-page--my-account">
+        <div class="ps-breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li>User Information</li>
+                </ul>
+            </div>
+        </div>
+        <section class="ps-section--account">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="ps-section__left">
+                            <aside class="ps-widget--account-dashboard">
+                                <div class="ps-widget__header">
+                                    <img style="object-fit:cover;" src="{{request.user.get_avatar}}" alt="">
+                                    
+                                    <figure>
+                                        <figcaption>Hello {{request.user.first_name}}</figcaption>
+                                        <p><a href="#"><span class="__cf_email__">{{request.user.email}}</span></a></p>
+                                    </figure>
+                                </div>
+                                <div class="ps-widget__content">
+                                    <ul>
+                                        <li class="active"><a href="#"><i class="icon-user"></i> Account Information</a></li>
+                                        <li><a href="{% url 'product:notifications' %}"><i class="icon-alarm-ringing"></i> Notifications</a></li>
+                                        <li><a href="{% url 'product:invoice' %}"><i class="icon-papers"></i> Invoices</a></li>
+                                        {% comment %} <li><a href="{% url 'user:user_adress' request.user.id %}"><i class="icon-map-marker"></i> Address</a></li> {% endcomment %}
+                                        <li><a href="#"><i class="icon-store"></i> Recent Viewed Product</a></li>
+                                        <li><a href="{% url 'product:user_wishlist' %}"><i class="icon-heart"></i> Wishlist</a></li>
+                                        <li><a href="{% url 'accounts:logout' %}"><i class="icon-power-switch"></i>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="ps-section__right">
+                            {% if request.user.is_buyer %}
+                            <form class="ps-form--account-setting" action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="ps-form__header">
+                                    <h3> User Information</h3>
+                                </div>
+                                
+                                <div class="ps-form__content">
+                                    <div class="form-group">
+                                        {{form_b.first_name|as_crispy_field}}
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                {{form_b.last_name|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                {{form_b.email|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                {{form_b.birthday|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                               {{form_b.phone_number|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                               {{form_b.image|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                               {{form_b.usertype|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group submit">
+                                            <button class="ps-btn" name="btn_buyer">Update</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                            {% endif %}
+                            {% if request.user.is_seller %}
+                            <form class="ps-form--account-setting" action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="ps-form__header">
+                                    <h3> User Information</h3>
+                                </div>
+                                
+                                <div class="ps-form__content">
+                                    <div class="form-group">
+                                        {{form_s.first_name|as_crispy_field}}
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                {{form_s.last_name|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                {{form_s.email|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                {{form_s.birthday|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                               {{form_s.phone_number|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                               {{form_s.image|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                               {{form_s.usertype|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                               {{form_s.company_name|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                               <input type="hidden">
+                                            </div>
+                                        </div>
+                                        <div class="form-group submit">
+                                            <button class="ps-btn" name="btn_seller">Update</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="ps-newsletter">
+            <div class="ps-container">
+                <form class="ps-form--newsletter" action="" method="post">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <div class="ps-form__left">
+                                <h3>Newsletter</h3>
+                                <p>Subcribe to get information about products and coupons</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <div class="ps-form__right">
+                                <div class="form-group--nest">
+                                    <input class="form-control" type="email" placeholder="Email address">
+                                    <button class="ps-btn">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock body %}

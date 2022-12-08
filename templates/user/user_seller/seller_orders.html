@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+     <div class="ps-page--single">
+        <div class="ps-breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Pages</a></li>
+                    <li><a href="vendor-store.html">Vendor Pages</a></li>
+                    <li>Vendor Dashboard Free</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  <div class="ps-vendor-dashboard">
+        <div class="container">
+            <div class="ps-section__header">
+                <h3>Dasboard</h3>
+               
+            </div>
+          
+        </div>
+    </div> 
+    
+    <div class="free_bigdiv">
+       <div class="free_middiv">
+        <div class="col-md-3">
+          <div class="sidebar">
+            <ul class="list-dashboard">
+      
+      
+              <li class="d-flex justify-content-center other-lies  common-lies w-100">
+                  <a href="{% url 'user:seller_dashboard' request.user.id %}"><i class="fas fa-tachometer-alt icons"></i>Dashboard</a>
+                  
+                  </li>
+              <li class="d-flex justify-content-center other-lies common-lies">
+                  <a href="{% url 'user:seller_product' request.user.id %}"><i class="fas fa-briefcase icons"></i>Products</a>
+                  
+              <li class="d-flex justify-content-center active-dashboard common-lies">
+                  <a href="{% url 'product:seller_order' %}"><i class="fas fa-shopping-cart icons"></i>Orders</a>
+                  
+              </li>
+              <li class="d-flex justify-content-center other-lies common-lies">
+                  <a href="{% url 'user:vendor_settings' request.user.id %}"><i class="fas fa-cog icons"></i>Settings</a>
+                  
+              </li>
+              <li class="d-flex justify-content-center other-lies">
+                <button><a href="{% url 'user:store_view' request.user.id %}" title="Visit Store"><i class="fas fa-external-link-alt"></i></a></button>
+                <button><a href="{% url 'user:user_info' request.user.id %}"><i class="fas fa-user"></i></a></button>
+                <button><a href="{% url 'accounts:logout' %}"><i class="fa-solid fa-power-off"></i></a></button>
+              </li>
+          </ul>
+            
+          </div>
+          </div>
+         <div class="free_div2">
+            <!-- <div class="free_error">
+                <p><b>Error!</b> Your account is not enabled for selling, please contact the admin</p>
+            </div>
+            <div class="free_orders">
+              <ul>
+                <li><a href="#">All(0) |</a></li>
+                 <li><a href="#">Completed(0) |</a></li>
+                 <li><a href="#">Processing(0) |</a></li>
+                 <li><a href="#">On-hold(0) |</a></li>
+                 <li><a href="#">Pending(0) |</a></li>
+                 <li><a href="#">Canselled(0) |</a></li>
+                 <li><a href="#">Refunded(0) |</a></li>
+                 <li><a href="#">Failed(0) |</a></li>
+              </ul>
+               
+            </div>
+            <div class="free_orders_big">
+                <button>Filter</button>
+                <input placeholder='search orders'/>
+                <input placeholder='search range orders'/>
+                <button>Filter</button>
+                <button>Reset</button>
+                <button>Expert all</button>
+                <button>Expert Filtered</button>
+            </div>
+            <div class="free_orders_mid">
+                 No orders found
+            </div > -->
+            <div class="list-group">
+              <div id="order-div">
+                <div id="order-div-head">
+                  <div>
+                    Product Information
+                  </div>
+                  <div>
+                    Price
+                  </div>
+                  <div>
+                    Status
+                  </div>
+                  <div>
+                    Data and Time
+                  </div>
+                </div>
+              <div id="orders">
+
+              
+                {% for order in orders %}
+                <div class="order">
+                  <div>
+                    <h5 class="order-customer">
+                      <i class="fa-solid fa-user"></i> {{order.customer.first_name}} {{order.customer.last_name}}
+                    </h5>
+                    <h5 class="order-address">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </h5>
+                    <h5 class="order-mail">
+                      <i class="fa-solid fa-envelope"></i> {{order.customer.email}}
+                    </h5>
+                    <h5>
+                      Name : {{order.product.name}}
+                    </h5>
+                  </div>
+                  <div class="order-price">
+                    <span>450$</span>
+                  </div>
+                  <div class="order-status">
+                    Pending
+                  </div>
+                  <div class="order-date">
+                    2022-11-03 13:34:12
+                  </div>
+                  <div class="order-status-change">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <ul class="order-status-list">
+                      <li>Pending</li>
+                      <li>Pending</li>
+                      <li>Pending</li>
+                      <li>Pending</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- <a href="#"  class="list-group-item list-group-item-action active" aria-current="true" style="background-color:forestgreen">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">#{{order.id}}</h5>
+                    <small>3 days ago</small>
+                  </div>
+                  <p class="mb-1" style="color:black ;">Customer :{{order.customer.first_name}} {{order.customer.last_name}}</p>
+                  <p class="mb-1" style="color:black ;">Adress :</p>
+                  <p class="mb-1" style="color:black ;">Email :{{order.customer.email}}</p>
+                  <h3>Product Name </h3>
+                  <p class="mb-1" style="color:black ;">{{order.product.name}}</p>
+                  
+                  <small>{{order.status}}</small>
+                </a> -->
+                <!-- Button trigger modal -->
+                  <!-- <button type="button" class="btn btn-primary" style="margin-bottom: 30px;" data-bs-toggle="modal" data-bs-target="#exampleModal-{{order.id}}">
+                    Edit
+                  </button> -->
+
+                {% endfor %}
+
+                <!-- Modal -->
+                {% for order in orders%}
+                      <div class="modal fade" id="exampleModal-{{order.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form action="" method="post">
+                                {% csrf_token %}
+
+                                
+                                  <input type="hidden" name="smth" value="{{order.id}}">
+                                  {{form|crispy}}
+                                
+
+                              
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </form>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                
+                    </div>
+                    </div>
+              </div>
+            
+
+         </div>
+         
+      </div>
+  </div>
+
+    
+    {% endblock body %} 
+
+
+
+
+    

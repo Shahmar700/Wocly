@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+{% csrf_token %}
+    <div class="ps-page--simple">
+        <div class="ps-breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop-default.html">Shop</a></li>
+                    <li>Whishlist</li>
+                </ul>
+            </div>
+        </div>
+        <div class="ps-section--shopping ps-whishlist">
+            <div class="container">
+                <div class="ps-section__header">
+                    <h1>Wishlist</h1>
+                </div>
+                <div class="ps-section__content">
+                    <div class="table-responsive">
+                        <table class="table ps-table--whishlist ps-table--responsive">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Product name</th>
+                                    <th>Unit Price</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product in products %}
+                                <tr id="parentWishDiv-{{product.id}}">
+                                    <td data-label="Remove" onclick="removeWishlist_html('{{ product.id }}')" id="wishDiv_2-{{product.id}}"><a href="#"><i class="icon-cross"></i></a></td>
+                                    <td data-label="Product">
+                                        <div class="ps-product--cart">
+                                            <div class="ps-product__thumbnail"><a href="{{product.get_absolute_url}}"><img style="object-fit:cover;" src="{{product.main_product_image}}" alt="" /></a></div>
+                                            <div class="ps-product__content"><a href="{{product.get_absolute_url}}">{{product.name}}</a>
+                                                <p>Sold By:<strong> {{product.seller.company_name}}</strong></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    {% comment %} <td class="price" data-label="Price">$205.00</td>\ {% endcomment %}
+                                    {% if product.discount_percent > 0 %}
+                                    <td class="price" data-label="Price">
+                                        ${{product.discount}} <del>${{product.price}} </del>
+                                    </td>
+                                    {% else %}
+                                    <td class="price" data-label="Price">${{product.price}}</td>
+                                    {% endif %}
+                                    <td data-label="Status"><span class="ps-tag ps-tag--in-stock">In-stock</span></td>
+                                    <td data-label="action"><a class="ps-btn" href="#">Add to cart</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ps-newsletter">
+        <div class="container">
+            <form class="ps-form--newsletter" action="http://nouthemes.net/html/martfury/do_action" method="post">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                        <div class="ps-form__left">
+                            <h3>Newsletter</h3>
+                            <p>Subcribe to get information about products and coupons</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                        <div class="ps-form__right">
+                            <div class="form-group--nest">
+                                <input class="form-control" type="email" placeholder="Email address">
+                                <button class="ps-btn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock body %}

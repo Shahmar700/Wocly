@@ -1,0 +1,426 @@
+{% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %} {% load
+widget_tweaks %} {% block body %}
+<div class="ps-page--single">
+  <div class="ps-breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Pages</a></li>
+        <li><a href="vendor-store.html">Vendor Pages</a></li>
+        <li>Vendor Dashboard Free</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="ps-vendor-dashboard">
+  <div class="container">
+    <div class="ps-section__header">
+      <h3>Dasboard</h3>
+    </div>
+  </div>
+</div>
+
+<div class="free_bigdiv">
+  <div class="free_middiv">
+    <div class="col-md-3">
+    <div class="sidebar">
+      <ul class="list-dashboard">
+
+
+        <li class="d-flex justify-content-center other-lies  common-lies w-100">
+            <a href="{% url 'user:seller_dashboard' request.user.id %}"><i class="fas fa-tachometer-alt icons"></i>Dashboard</a>
+            
+            </li>
+        <li class="d-flex justify-content-center active-dashboard common-lies">
+            <a href="{% url 'user:seller_product' request.user.id %}"><i class="fas fa-briefcase icons"></i>Products</a>
+            
+        <li class="d-flex justify-content-center other-lies common-lies">
+            <a href="{% url 'product:seller_order' %}"><i class="fas fa-shopping-cart icons"></i>Orders</a>
+            
+        </li>
+        <li class="d-flex justify-content-center other-lies common-lies">
+            <a href="{% url 'user:vendor_settings' request.user.id %}"><i class="fas fa-cog icons"></i>Settings</a>
+            
+        </li>
+        <li class="d-flex justify-content-center other-lies">
+          <button><a href="{% url 'user:store_view' request.user.id %}" title="Visit Store"><i class="fas fa-external-link-alt"></i></a></button>
+          <button><a href="{% url 'user:user_info' request.user.id %}"><i class="fas fa-user"></i></a></button>
+          <button><a href="{% url 'accounts:logout' %}"><i class="fa-solid fa-power-off"></i></a></button>
+        </li>
+    </ul>
+      
+    </div>
+    </div>
+    <div class="free_div2">
+      {% comment %} <div class="free_error">
+        <p>
+          <b>Error!</b> Your account is not enabled for selling, please contact
+          the admin
+        </p>
+      </div> {% endcomment %}
+      <a href="{% url 'user:add_product' request.user.id %}">
+        <button class="button_add">Product elave et</button>
+      </a>
+
+      <div class="ps-shopping ps-tab-root mt-5">
+        <div class="ps-shopping__header">
+          <p><strong> {{products|length}}</strong> Products found</p>
+          <div class="ps-shopping__actions">
+            <div class="ps-shopping__view">
+              <p>View</p>
+              <ul class="ps-tab-list">
+                <li class="active">
+                  <a href="#tab-1"><i class="icon-grid"></i></a>
+                </li>
+                <li>
+                  <a href="#tab-2"><i class="icon-list4"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ps-tabs">
+          <div class="ps-tab active" id="tab-1">
+            <div class="ps-shopping-product">
+              <div class="row">
+                {% for product in products %}
+
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                  <div class="ps-product ps-product--inner">
+                    <div class="ps-product__thumbnail">
+                      <a href="{{product.get_absolute_url}}"
+                        ><img
+                          style="height:object-fit:cover;"
+                          src="{{product.main_product_image}}"
+                          alt=""
+                          width="138"
+                          height="138"
+                      /></a>
+                      {% if product.discount_percent > 0 %}
+                      <div class="ps-product__badge">
+                        -{{product.discount_percent}}%
+                      </div>
+                      {% endif %}
+                      <ul class="ps-product__actions">
+                        <li>
+                          <a
+                            id="asas"
+                            href="{% url 'product:delete_product' product.id %}"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Delete"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-primary"
+                              data-toggle="modal"
+                              style="background-color: transparent; border:none;"
+                              data-target="#"
+                            >
+                              <i class="fa-solid fa-trash"> </i>
+                            </button>
+                            {% comment %} <label for="modal_delete"></label>
+                            <input
+                              type="button"
+                              id="modal_delete"
+                              class="btn btn-primary"
+                              data-toggle="modal"
+                              data-target="#exampleModal"
+                              style="display: none"
+                            />
+                            {% endcomment %}
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            data-placement="top"
+                            class="open_data_modal"
+                            title="Quick View"
+                            data-discount="true"
+                            data-id="{{product.id}}"
+                            data-toggle="modal"
+                            data-target="#product-quickview"
+                            ><i class="fa-solid fa-eye"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Edit"
+                            ><i class="fa-solid fa-pen-to-square"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Compare"
+                            ><i class="fa-solid fa-chart-simple"></i
+                          ></a>
+                        </li>
+                      </ul>
+                      <!-- Button trigger modal -->
+                      {% comment %}
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-toggle="modal"
+                        data-target="#exampleModal"
+                      >
+                        Launch demo modal
+                      </button>
+                      {% endcomment %}
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">
+                                Delete Product
+                              </h5>
+                              <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Do you really want to delete this product?
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                              <button type="button" class="btn btn-primary">
+                                <a
+                                  href="{% url 'product:delete_product' product.id %}"
+                                  >Save changes</a
+                                >
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ps-product__container">
+                      {% comment %}
+                      <a class="ps-product__vendor" href="#"
+                        >{{product.seller.company_name}}</a
+                      >
+                      {% endcomment %}
+                      <div class="ps-product__content">
+                        <a
+                          class="ps-product__title"
+                          href="{{product.get_absolute_url}}"
+                          >{{product.name}}</a
+                        >
+                        <div class="ps-product__rating">
+                          <select class="ps-rating" data-read-only="true">
+                            <option value="1">1</option>
+                            <option value="1">2</option>
+                            <option value="1">3</option>
+                            <option value="1">4</option>
+                            <option value="2">5</option></select
+                          ><span>01</span>
+                        </div>
+                        {% if product.discount_percent > 0 %}
+                        <p class="ps-product__price sale">
+                          ${{product.discount}} <del>${{product.price}} </del>
+                        </p>
+                        {% else %}
+                        <p class="ps-product__price sale">${{product.price}}</p>
+                        {% endif %}
+                        <div
+                          class="ps-product__progress-bar ps-progress"
+                          data-value="78"
+                        >
+                          <div class="ps-progress__value"><span></span></div>
+                          <p>Sold:{{product.sold}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {% endfor %}
+              </div>
+            </div>
+            <div class="ps-pagination">
+              <ul class="pagination">
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li>
+                  <a href="#">Next Page<i class="icon-chevron-right"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="ps-tab" id="tab-2">
+            <div class="ps-shopping-product">
+              {% for product in products %}
+              <div class="ps-product ps-product--wide">
+                <div class="ps-product__thumbnail">
+                  <a href="{{product.get_absolute_url}}"
+                    ><img
+                      style="object-fit: cover"
+                      src="{{product.main_product_image}}"
+                      width="300"
+                      height="300"
+                      alt=""
+                  /></a>
+                  {% if product.discount_percent > 0 %}
+                  <div class="ps-product__badge">
+                    -{{product.discount_percent}}%
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="ps-product__container">
+                  <div class="ps-product__content">
+                    <a class="ps-product__title" href="product-default.html"
+                      >{{product.title}}</a
+                    >
+                    <div class="ps-product__rating">
+                      <select class="ps-rating" data-read-only="true">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                        <option value="1">4</option>
+                        <option value="2">5</option></select
+                      ><span>02</span>
+                    </div>
+                    <p class="ps-product__vendor">
+                      Sold by:<a href="#">{{product.seller.company_name}}</a>
+                    </p>
+                    <ul class="ps-product__desc">
+                      <li>Unrestrained and portable active stereo speaker</li>
+                      <li>Free from the confines of wires and chords</li>
+                      <li>20 hours of portable capabilities</li>
+                      <li>
+                        Double-ended Coil Cord with 3.5mm Stereo Plugs Included
+                      </li>
+                      <li>3/4″ Dome Tweeters: 2X and 4″ Woofer: 1X</li>
+                    </ul>
+                  </div>
+                  <div class="ps-product__shopping">
+                    {% if product.discount_percent > 0 %}
+                    <p class="ps-product__price sale">
+                      ${{product.discount}} <del>${{product.price}} </del>
+                    </p>
+                    {% else %}
+                    <p class="ps-product__price sale">${{product.price}}</p>
+                    {% endif %} {% comment %}
+                    <a class="ps-btn" href="#">Add to cart</a> {% endcomment %}
+                    <ul class="ps-product__actions">
+                      <li>
+                        <a href="#"><i class="icon-heart"></i> Wishlist</a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="icon-chart-bars"></i> Compare</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="product-quickview"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="product-quickview"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <span class="modal-close" data-dismiss="modal"
+        ><i class="icon-cross2"></i
+      ></span>
+      <article
+        class="ps-product--detail ps-product--fullwidth ps-product--quickview"
+      >
+        <div class="ps-product__header">
+          <div class="ps-product__thumbnail" data-vertical="false">
+            <div class="ps-product__images" data-arrow="true">
+              <div class="item">
+                <img src="img/products/detail/fullwidth/1.jpg" alt="" />
+              </div>
+              <div class="item">
+                <img src="img/products/detail/fullwidth/2.jpg" alt="" />
+              </div>
+              <div class="item">
+                <img src="img/products/detail/fullwidth/3.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="ps-product__info">
+            <h1>Marshall Kilburn Portable Wireless Speaker</h1>
+            <div class="ps-product__meta">
+              <p>Brand:<a href="shop-default.html">Sony</a></p>
+              <div class="ps-product__rating">
+                <select class="ps-rating" data-read-only="true">
+                  <option value="1">1</option>
+                  <option value="1">2</option>
+                  <option value="1">3</option>
+                  <option value="1">4</option>
+                  <option value="2">5</option></select
+                ><span>(1 review)</span>
+              </div>
+            </div>
+            <h4 class="ps-product__price">$36.78 – $56.99</h4>
+            <div class="ps-product__desc">
+              <p>
+                Sold By:<a href="shop-default.html"><strong> Go Pro</strong></a>
+              </p>
+              <ul class="ps-list--dot">
+                <li>Unrestrained and portable active stereo speaker</li>
+                <li>Free from the confines of wires and chords</li>
+                <li>20 hours of portable capabilities</li>
+                <li>Double-ended Coil Cord with 3.5mm Stereo Plugs Included</li>
+                <li>3/4″ Dome Tweeters: 2X and 4″ Woofer: 1X</li>
+              </ul>
+            </div>
+            {% comment %}
+            <div class="ps-product__shopping">
+              <a class="ps-btn ps-btn--black" href="#">Add to cart</a
+              ><a class="ps-btn" href="#">Buy Now</a>
+              <div class="ps-product__actions">
+                <a href="#"><i class="icon-heart"></i></a
+                ><a href="#"><i class="icon-chart-bars"></i></a>
+              </div>
+            </div>
+            {% endcomment %}
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

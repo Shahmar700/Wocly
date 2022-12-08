@@ -1,0 +1,456 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <nav class="navigation--mobile-product"><a class="ps-btn ps-btn--black" href="shopping-cart.html">Add to cart</a><a class="ps-btn" href="checkout.html">Buy Now</a></nav>
+    <div class="ps-breadcrumb">
+        <div class="ps-container">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'product:index' %}">Home</a></li>
+                {% comment %} <li><a href="shop-default.html">Consumer Electrics</a></li>
+                <li><a href="shop-default.html">Refrigerators</a></li>
+                <li><a href="shop-default.html">Home Theater System</a></li> {% endcomment %}
+                <li>{{product.category.name}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ps-page--product">
+        <div class="ps-container">
+            <div class="ps-page__container">
+                <div class="ps-page__left">
+                    <div class="ps-product--detail ps-product--fullwidth">
+                        <div class="ps-product__header">
+                            <div class="ps-product__thumbnail" data-vertical="true">
+                                <figure>
+                                    <div class="ps-wrapper">
+                                        <div class="ps-product__gallery" data-arrow="true">
+                                            {% for image in product.Images.all %}
+                                            <div class="item"><a href="{{image.image.url}}"><img src="{{image.image.url}}" alt=""></a></div>
+                                            {% endfor %}
+                                            {% comment %} <div class="item"><a href="{% static 'img/products/detail/groupped/2.jpg' %}"><img src="{% static 'img/products/detail/groupped/2.jpg' %}" alt=""></a></div>
+                                            <div class="item"><a href="img/products/detail/groupped/3.jpg"><img src="img/products/detail/groupped/3.jpg" alt=""></a></div>
+                                            <div class="item"><a href="img/products/detail/groupped/4.jpg"><img src="img/products/detail/groupped/4.jpg" alt=""></a></div> {% endcomment %}
+                                        </div>
+                                    </div>
+                                </figure>
+                                <div class="ps-product__variants" data-item="4" data-md="4" data-sm="4" data-arrow="false">
+                                    {% for image in product.Images.all %}
+                                            <div class="item"><a href="{{image.image.url}}"><img src="{{image.image.url}}" alt=""></a></div>
+                                    {% endfor %}
+                                    {% comment %} <div class="item"><img src="{% static 'img/products/detail/groupped/2.jpg' %}" alt=""></div>
+                                    <div class="item"><img src="{% static 'img/products/detail/groupped/3.jpg' %}" alt=""></div>
+                                    <div class="item"><img src="{% static 'img/products/detail/groupped/4.jpg' %}" alt=""></div> {% endcomment %}
+                                </div>
+                            </div>
+                            <div class="ps-product__info">
+                                <h1>{{product.name}}</h1>
+                                <div class="ps-product__meta">
+                                    <p>Brand:<a href="shop-default.html">{{product.brand.name}}</a></p>
+                                    <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option>
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>(1 review)</span>
+                                    </div>
+                                </div>
+                                <h4 class="ps-product__price">${{product.discount}} – ${{product.price}}</h4>
+                                <div class="ps-product__desc">
+                                    <p>Sold By:<a href="{% url 'user:store_view' product.slug %}"><strong> {{product.seller.company_name}}</strong></a></p>
+                                    <ul class="ps-list--dot">
+                                        {{product.mini_description|safe}}
+                                    </ul>
+                                </div>
+                                {% comment %} <div class="ps-product__groupped">
+                                    <div class="table-responsive">
+                                        <table class="table ps-table--product-groupped">
+                                            <tbody>
+                                                <tr>
+                                                    <td><a class="ps-btn" href="#">Read more</a></td>
+                                                    <td><a class="title" href="product-default.html">Aroma Rice Cooker</a></td>
+                                                    <td>
+                                                        <p>$275.50</p>
+                                                        <p>Status:<span class="ps-tag--out-stock"> Out of stock</span></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="ps-btn" href="#">Read more</a></td>
+                                                    <td><a class="title" href="product-default.html">Korea Fabric Chair In Brown Color</a></td>
+                                                    <td>
+                                                        <p> $320.54</p>
+                                                        <p>Status:<span class="ps-tag--out-stock"> Out of stock</span></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="ps-btn" href="#">Read more</a></td>
+                                                    <td><a class="title" href="product-default.html">Set 14-Piece Knife From KichiKit</a></td>
+                                                    <td>
+                                                        <p>$85.62</p>
+                                                        <p>Status:<span class="ps-tag--out-stock"> Out of stock</span></p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div> {% endcomment %}
+                                <div class="ps-product__shopping"><a class="ps-btn ps-btn--black" href="#">Add to cart</a>
+                                    <a class="ps-btn" href="#">Add to Wishlist</a>
+                                    {% comment %} <div class="ps-product__actions"><a href="#"><i class="icon-heart"></i></a><a href="#"><i class="icon-chart-bars"></i></a></div> {% endcomment %}
+                                </div>
+                                {% comment %} <div class="ps-product__specification"><a class="report" href="#">Report Abuse</a>
+                                    <p><strong>SKU:</strong> SF1133569600-1</p>
+                                    <p class="categories"><strong> Categories:</strong><a href="#">Consumer Electronics</a>,<a href="#"> Refrigerator</a>,<a href="#">Babies & Moms</a></p>
+                                    <p class="tags"><strong> Tags</strong><a href="#">sofa</a>,<a href="#">technologies</a>,<a href="#">wireless</a></p>
+                                </div> {% endcomment %}
+                                {% comment %} <div class="ps-product__sharing"><a class="facebook" href="#"><i class="fa fa-facebook"></i></a><a class="twitter" href="#"><i class="fa fa-twitter"></i></a><a class="google" href="#"><i class="fa fa-google-plus"></i></a><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></div> {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="ps-product__content ps-tab-root">
+                            <ul class="ps-tab-list">
+                                <li class="active"><a href="#tab-1">Description</a></li>
+                                <li><a href="#tab-2">Specification</a></li>
+                                {% comment %} <li><a href="#tab-3">Vendor</a></li> {% endcomment %}
+                                <li><a href="#tab-4">Reviews (1)</a></li>
+                                {% comment %} <li><a href="#tab-5">Questions and Answers</a></li> {% endcomment %}
+                                {% comment %} <li><a href="#tab-6">More Offers</a></li> {% endcomment %}
+                            </ul>
+                            <div class="ps-tabs">
+                                <div class="ps-tab active" id="tab-1">
+                                    <div class="ps-document">
+                                        <p>{{product.description|safe}}</p>
+                                    </div>
+                                </div>
+                                <div class="ps-tab" id="tab-2">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered ps-table ps-table--specification">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Color</td>
+                                                    <td>{{product.color}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Style</td>
+                                                    <td>{{product.style}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Wireless</td>
+                                                    <td>{{product.wireless}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dimensions</td>
+                                                    <td>{{product.dimension}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Weight</td>
+                                                    <td>{{product.weight}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Battery Life</td>
+                                                    <td>{{product.battery_life}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bluetooth</td>
+                                                    <td>{{product.bluetooth}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="ps-tab" id="tab-3">
+                                    <h4>{{product.seller.company_name}}</h4>
+                                    <p>{{product.seller.seller_vendor.name}}</a>
+                                </div>
+                                <div class="ps-tab" id="tab-4">
+                                    <div class="row">
+                                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 ">
+                                            <div class="ps-block--average-rating">
+                                                <div class="ps-block__header">
+                                                    <h3>4.00</h3>
+                                                    <select class="ps-rating" data-read-only="true">
+                                                        <option value="1">1</option>
+                                                        <option value="1">2</option>
+                                                        <option value="1">3</option>
+                                                        <option value="1">4</option>
+                                                        <option value="2">5</option>
+                                                    </select><span>1 Review</span>
+                                                </div>
+                                                <div class="ps-block__star"><span>5 Star</span>
+                                                    <div class="ps-progress" data-value="100"><span></span></div><span>100%</span>
+                                                </div>
+                                                <div class="ps-block__star"><span>4 Star</span>
+                                                    <div class="ps-progress" data-value="0"><span></span></div><span>0</span>
+                                                </div>
+                                                <div class="ps-block__star"><span>3 Star</span>
+                                                    <div class="ps-progress" data-value="0"><span></span></div><span>0</span>
+                                                </div>
+                                                <div class="ps-block__star"><span>2 Star</span>
+                                                    <div class="ps-progress" data-value="0"><span></span></div><span>0</span>
+                                                </div>
+                                                <div class="ps-block__star"><span>1 Star</span>
+                                                    <div class="ps-progress" data-value="0"><span></span></div><span>0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ">
+                                            <form class="ps-form--review" action="http://nouthemes.net/html/martfury/index.html" method="get">
+                                                <h4>Submit Your Review</h4>
+                                                <p>Your email address will not be published. Required fields are marked<sup>*</sup></p>
+                                                {% comment %} <div class="form-group form-group__rating">
+                                                    <label>Your rating of this product</label>
+                                                    <select class="ps-rating" data-read-only="false">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div> {% endcomment %}
+                                                <div class="form-group">
+                                                    <textarea class="form-control" rows="6" placeholder="Write your review here"></textarea>
+                                                </div>
+                                                {% comment %} <div class="row">
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12  ">
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" placeholder="Your Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12  ">
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="email" placeholder="Your Email">
+                                                        </div>
+                                                    </div>
+                                                </div> {% endcomment %}
+                                                <div class="form-group submit">
+                                                    <button class="ps-btn">Submit Review</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ps-tab" id="tab-5">
+                                    <div class="ps-block--questions-answers">
+                                        <h3>Questions and Answers</h3>
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="Have a question? Search for answer?">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ps-tab active" id="tab-6">
+                                    <p>Sorry no more offers available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ps-page__right">
+                    <aside class="widget widget_product widget_features">
+                        <p><i class="icon-network"></i> Shipping worldwide</p>
+                        <p><i class="icon-3d-rotate"></i> Free 7-day return if eligible, so easy</p>
+                        <p><i class="icon-receipt"></i> Supplier give bills for this product.</p>
+                        <p><i class="icon-credit-card"></i> Pay online or when receiving goods</p>
+                    </aside>
+                    {% comment %} <aside class="widget widget_sell-on-site"> {% endcomment %}
+                        {% comment %} <p><i class="icon-store"></i> Sell on Martfury?<a href="#"> Register Now !</a></p> {% endcomment %}
+                    {% comment %} </aside> {% endcomment %}
+                    <aside class="widget widget_ads"><a href="#"><img src="{% static 'img/ads/product-ads.png' %}" alt=""></a></aside>
+                    <aside class="widget widget_same-brand">
+                        <h3>Same Category</h3>
+                        <div class="widget__content">
+                            {% for product in product.category.sub_category.all|exclude_product:product|slice:':1' %}
+                            <div class="ps-product">
+                                <div class="ps-product__thumbnail"><a href="{{product.get_absolute_url}}"><img src="{{product.image.url}}" alt="" /></a>
+                                    <div class="ps-product__badge">-37%</div>
+                                    <ul class="ps-product__actions">
+                                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag2"></i></a></li>
+                                        <li><a href="#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="ps-product__container"><a class="ps-product__vendor" href="#">Robert's Store</a>
+                                    <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Grand Slam Indoor Of Show Jumping Novel</a>
+                                        {% comment %} <div class="ps-product__rating">
+                                            <select class="ps-rating" data-read-only="true">
+                                                <option value="1">1</option>
+                                                <option value="1">2</option>
+                                                <option value="1">3</option>
+                                                <option value="1">4</option>
+                                                <option value="2">5</option>
+                                            </select><span>01</span>
+                                        </div> {% endcomment %}
+                                        {% if product.discount_percent > 0 %}
+                                                <p class="ps-product__price sale">${{product.discount}} <del>${{product.price}} </del></p>
+                                                {% else %}
+                                                <p class="ps-product__price sale">${{product.price}}</p>
+                                                {% endif %}
+                                    </div>
+                                    <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Grand Slam Indoor Of Show Jumping Novel</a>
+                                        <p class="ps-product__price sale">$32.99 <del>$41.00 </del></p> 
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <div class="ps-section--default ps-instagrams">
+                {% comment %} <div class="ps-section__header">
+                    <h3>See It Styled On Instagram</h3>
+                </div> {% endcomment %}
+                {% comment %} <div class="ps-section__content">
+                    <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="10" data-owl-nav="true" data-owl-dots="true" data-owl-item="7" data-owl-item-xs="3" data-owl-item-sm="4" data-owl-item-md="5" data-owl-item-lg="6" data-owl-duration="1000" data-owl-mousedrag="on"><a class="ps-block--instagram" href="#"><img src="img/instagram/1.jpg" alt=""></a><a class="ps-block--instagram" href="#"><img src="img/instagram/2.jpg" alt=""></a><a class="ps-block--instagram" href="#"><img src="img/instagram/3.jpg" alt=""></a><a class="ps-block--instagram" href="#"><img src="img/instagram/4.jpg" alt=""></a><a class="ps-block--instagram" href="#"><img src="img/instagram/5.jpg" alt=""></a><a class="ps-block--instagram" href="#"><img src="img/instagram/6.jpg" alt=""></a><a class="ps-block--instagram" href="#"><img src="img/instagram/7.jpg" alt=""></a><a class="ps-block--instagram" href="#"><img src="img/instagram/8.jpg" alt=""></a></div>
+                </div> {% endcomment %}
+            </div>
+            <div class="ps-section--default ps-customer-bought">
+                {% comment %} <div class="ps-section__header">
+                    <h3>Customers who bought this item also bought</h3>
+                </div> {% endcomment %}
+                {% comment %} <div class="ps-section__content">
+                    <div class="row">
+                        
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+                            <div class="ps-product">
+                                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/shop/4.jpg" alt="" /></a>
+                                    <div class="ps-product__badge hot">hot</div>
+                                    <ul class="ps-product__actions">
+                                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-bag2"></i></a></li>
+                                        <li><a href="#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
+                                    <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Xbox One Wireless Controller Black Color</a>
+                                        <div class="ps-product__rating">
+                                            <select class="ps-rating" data-read-only="true">
+                                                <option value="1">1</option>
+                                                <option value="1">2</option>
+                                                <option value="1">3</option>
+                                                <option value="1">4</option>
+                                                <option value="2">5</option>
+                                            </select><span>01</span>
+                                        </div>
+                                        <p class="ps-product__price">$55.99</p>
+                                    </div>
+                                    <div class="ps-product__content hover"><a class="ps-product__title" href="product-default.html">Xbox One Wireless Controller Black Color</a>
+                                        <p class="ps-product__price">$55.99</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
+            </div>
+            <div class="ps-section--default">
+                <div class="ps-section__header">
+                    <h3>Related products</h3>
+                </div>
+                <div class="ps-section__content">
+                    <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="10000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="true" data-owl-item="6" data-owl-item-xs="2" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-item-xl="5" data-owl-duration="1000" data-owl-mousedrag="on">
+                        {% for product in product.category.sub_category.all|exclude_product:product|slice:':2' %}
+                        <div class="ps-product ps-product--inner">
+                            <div class="ps-product__thumbnail"><a href="{{product.get_absolute_url}}"><img src="{{product.main_product_image}}" alt=""></a>
+
+                                {% if product.discount_percent > 0 %}
+                                            <div class="ps-product__badge">-{{product.discount_percent}}%</div>
+                                            {% endif %}
+                                <ul class="ps-product__actions">
+                                    {% comment %} <i class="fa-solid fa-heart"></i> {% endcomment %}
+                                    <li>
+                                    {% if request.user.is_authenticated  %}
+                                    {% if item_already_in_cart  %}
+                                        <a href="{% url 'product:showcart' %}" class="btn btn-warning shadow px-5 py-2 ms-4">Go to Cart</a>
+                                    {% else %}
+                                    <form action="/add-to-cart" class="d-inline">
+                                        <input type="hidden" name="prod_id" value="{{product.id}}" id="prod_id">
+                                        <button type="submit" class="btn">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a>
+                                        </button>
+                                        
+                                    </form>
+                                    {% endif %}
+                                    {% endif %}
+
+                                    {% if not request.user.is_authenticated %}
+                                    <form action="/add-to-cart" class="d-inline">
+                                        <input type="hidden" name="prod_id" value="{{product.id}}" id="prod_id">
+                                        <button type="submit" class="btn">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a>
+                                        </button>
+                                        
+                                    </form>
+                                    {% endif %}
+                                        
+                                        {% comment %} <a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a> {% endcomment %}
+                                    </li>
+                                    <li><a href="#" data-placement="top" title="Quick View" data-toggle="modal" data-target="#product-quickview"><i class="icon-eye"></i></a></li>
+                                    
+                                    <li 
+                                    onclick="addWishlist('{{ product.id }}')"
+                                     id="wishDiv-{{product.id}}">
+                                        {% if request.user in product.wishlist.all %}
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="fa-solid fa-heart"></i></a>
+                                        {% else %}
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Whishlist"><i class="icon-heart"></i></a>
+                                        {% endif %}
+                                    </li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="icon-chart-bars"></i></a></li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor" href="{% url 'user:store_view' product.seller.id %}">{{product.seller.company_name}}</a>
+                                <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">{{product.title}}</a>
+                                    {% comment %} <div class="ps-product__rating">
+                                        <select class="ps-rating" data-read-only="true">
+                                            <option value="1">1</option>
+                                            <option value="1">2</option> 
+                                            <option value="1">3</option>
+                                            <option value="1">4</option>
+                                            <option value="2">5</option>
+                                        </select><span>01</span>
+                                    </div> {% endcomment %}
+                                    {% if product.discount_percent > 0 %}
+                                                <p class="ps-product__price sale">${{product.discount}} <del>${{product.price}} </del></p>
+                                                {% else %}
+                                                <p class="ps-product__price sale">${{product.price}}</p>
+                                                {% endif %}
+                                    <div class="ps-product__progress-bar ps-progress" data-value="78">
+                                        <div class="ps-progress__value"><span></span></div>
+                                        <p>Sold:{{product.sold}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} <div class="ps-newsletter">
+        <div class="container">
+            <form class="ps-form--newsletter" action="http://nouthemes.net/html/martfury/do_action" method="post">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                        <div class="ps-form__left">
+                            <h3>Newsletter</h3>
+                            <p>Subcribe to get information about products and coupons</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                        <div class="ps-form__right">
+                            <div class="form-group--nest">
+                                <input class="form-control" type="email" placeholder="Email address">
+                                <button class="ps-btn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> {% endcomment %}
+    {% endblock body %}
