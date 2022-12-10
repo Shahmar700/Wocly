@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,500&display=swap');
+
+.header__content{
+    /* background: rgb(32,80,114);
+background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(50,157,156,1) 58%); */
+
+background: rgb(32,80,114);
+background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 100%);
+padding: 10px !important;
+}
+
+
+.form-control{
+    background-color: #fff !important;
+    border: 0 !important;
+    outline: 0 !important;
+    border-bottom: 1px solid #fff !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+    opacity: 0.8 !important;
+}
+.searchBtn{
+    margin-left: 7px !important;
+    border-radius: 50px !important;
+    /* opacity: 0.8 !important; */
+    /* background: #7be495 !important; */
+    background: rgb(50,157,156);
+    background: linear-gradient(90deg, rgba(50,157,156,1) 4%, rgba(60,167,155,1) 11%, rgba(123,228,149,1) 54%);
+    color: #fff !important;
+}
+.searchBtn:hover{
+    background: rgb(50,157,156);
+    background: linear-gradient(317deg, rgba(50,157,156,1) 4%, rgba(60,167,155,1) 11%, rgba(123,228,149,1) 54%);
+}
+
+.wocly-logo{
+    color: #fff !important;
+    font-size: 35px !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.ps-block--user-header{
+    display: flex;
+    align-items: center;
+}
+.ps-block--user-header{
+    color: #fff !important;
+}
+.ps-block__right{
+    display: flex;
+}
+.ps-block__right a:nth-child(1){
+    padding-right: 5px !important;
+    border-right: 1px solid #fff !important;
+}
+.ps-block__right a:nth-child(2){
+    padding-left: 5px !important;
+}
+
+
+.homeBanner {
+    height: 100vh;
+    position: relative;
+}
+.homeBanner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+}
+.bannerGradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(32,80,114);
+background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 100%);
+opacity: 0.5;
+}
+.slogan{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: #fff !important;
+    z-index: 9 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.underSlogan{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
+    z-index: 9 !important;
+    font-size: 24px !important;
+    background: rgb(50,157,156);
+    background: linear-gradient(90deg, rgba(50,157,156,1) 4%, rgba(60,167,155,1) 11%, rgba(123,228,149,1) 54%);
+    padding: 2px 15px;
+    border-radius: 50px;
+    letter-spacing: 7px;
+}
+.underSlogan:hover{
+    background: rgb(50,157,156);
+    background: linear-gradient(317deg, rgba(50,157,156,1) 4%, rgba(60,167,155,1) 11%, rgba(123,228,149,1) 54%);
+}

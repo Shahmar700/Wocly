@@ -60,3 +60,6 @@
     object-fit: cover;
 }
 
+.header__top{
+    border: 1px solid red !important;
+}

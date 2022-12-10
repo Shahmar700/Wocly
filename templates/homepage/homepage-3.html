@@ -3,7 +3,8 @@
 {% block body %}
     <div id="homepage-3">
         {% csrf_token %}
-        <div class="ps-home-banner">
+
+        <!-- <div class="ps-home-banner">
             <div class="ps-carousel--nav-inside owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut">
                 <div class="ps-banner--market-1" data-background="{% static 'img/slider/home-3/home-banner/1.jpg' %}">
                     <img src="{% static 'img/slider/home-3/home-banner/1.jpg' %}" alt="">
@@ -21,7 +22,15 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+
+        <div class="homeBanner">
+            <p class="slogan">Help has arrived.</p>
+            <a href="" class="underSlogan">start now</a>
+            <div class="bannerGradient"></div>
+            <img src="../../media/home_img/banner.jpg" alt="">
         </div>
+        
         <div class="ps-site-features">
             <div class="container">
                 <div class="ps-block--site-features ps-block--site-features-2">

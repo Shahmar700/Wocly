@@ -26,7 +26,13 @@
     <link rel="stylesheet" href="{% static 'plugins/select2/dist/css/select2.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sako.css' %}">
     <link rel="stylesheet" href="{% static 'css/market-place-1.css' %}">
+    <link rel="stylesheet" href="{% static 'https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css' %}">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
+
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     
@@ -177,7 +183,8 @@
                                 </li>
                             </ul> {% endcomment %}
                         </div>
-                    </div><a class="ps-logo" href="{% url 'product:index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                    <!-- </div><a class="ps-logo" href="{% url 'product:index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a> -->
+                    </div><a class="ps-logo wocly-logo" href="{% url 'product:index' %}">Wocly</a>
                 </div>
                 <div class="header__content-center">
                     <form class="ps-form--quick-search" action="http://nouthemes.net/html/martfury/index.html" method="get">
@@ -190,7 +197,7 @@
                             </select>
                         </div> {% endcomment %}
                         <input class="form-control" type="text" placeholder="I'm shopping for...">
-                        <button>Search</button>
+                        <button class="searchBtn"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
                 {% if request.user.is_buyer %}
@@ -297,7 +304,7 @@
                 {% endif %}
             </div>
         </div>
-        <nav class="navigation">
+        <!-- <nav class="navigation">
             <div class="container">
                 <div class="navigation__left">
                     <div class="menu--product-categories">
@@ -614,7 +621,7 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav> -->
     </header>
     <header class="header header--mobile" data-sticky="true">
         <div class="header__top">
