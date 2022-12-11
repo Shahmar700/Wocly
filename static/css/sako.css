@@ -111,3 +111,190 @@ opacity: 0.5;
     background: rgb(50,157,156);
     background: linear-gradient(317deg, rgba(50,157,156,1) 4%, rgba(60,167,155,1) 11%, rgba(123,228,149,1) 54%);
 }
+.homeBanner{
+    border-bottom: 1px solid #fff !important;
+}
+/* Home Page Section -2  */
+
+.ps-site-features{
+    /* background: rgb(32,80,114);
+background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,0.8561799719887955) 29%, rgba(50,157,156,0.9094012605042017) 50%, rgba(32,80,114,0.9150035014005602) 78%, rgba(32,80,114,1) 100%); */
+    background-color: transparent !important;
+    color: #fff !important;
+    /* border: 1px solid #7Be495; */
+    margin: 20px 0;
+}
+.ps-block--site-features h4, p{
+    color: #fff !important;
+}
+.ps-block__item{
+    display: flex;
+    align-items: center;
+}
+
+
+
+body{
+background: rgb(32,80,114);
+background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 78%, rgba(32,80,114,1) 100%);
+}
+
+.sec1, .sec2, .sec3, .sec4{
+    background-color: transparent;
+}
+.viewAll{
+    color: #fff !important;
+    border: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+.ps-block__left h3{
+    color: #fff;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.ps-section--gray{
+    background-color: transparent;
+    display: none;
+}
+
+.ps-section__header{
+    margin-bottom: 35px !important;
+}
+
+.employeesContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.workerBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.workerImg{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.workerImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.workerBox h3{
+    margin: 0 !important;
+    margin-top: 17px !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #fff;
+    font-weight: 500;
+}
+.workerText p{
+    margin: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+}
+
+.workerText .stars{
+    color: orange; 
+    font-size: 20px;
+}
+
+.sec1Text h1{
+    font-family: 'Poppins', sans-serif !important;
+    color: #7be495 !important;
+}
+
+.sec1Text p{
+    font-family: 'Poppins', sans-serif !important;
+    color: #fff;
+}
+.ps-footer{
+    background-color: black;
+    color: #fff;
+    opacity: 0.8;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+}
+
+.ps-footer a{
+    color: #fff !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+} 
+
+.ps-footer h3{
+    color: #56c596 !important;
+}
+
+.widget_content p{
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+}
+
+
+.ps-footer__copyright img{
+    width: 65px;
+    height: 45px;
+    object-fit: cover;
+}
+.ps-footer__copyright p{
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+}
+.payments{
+    display: flex;
+    align-items: center;
+}
+.payments .pays{
+    margin-left: 10px;
+}
+.pays {
+    display: flex;
+    align-items: center;
+}
+
+.mastercard{
+    width: 70px;
+    height: 40px;
+}
+.mastercard img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transform: scale(0.8);
+}
+
+.visa{
+    width: 75px;
+    height: 50px;
+}
+.visa img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transform: scale(0.8);
+}
+
+.mpay{
+    width: 60px;
+    height: 50px;
+}
+.mpay img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.million{
+    width: 70px;
+    height: 55px;
+}
+.million img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}

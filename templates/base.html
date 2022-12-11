@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="{% static 'css/market-place-1.css' %}">
     <link rel="stylesheet" href="{% static 'https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css' %}">
     <link rel="stylesheet" href="{% static 'https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
 
@@ -91,7 +93,8 @@
             <div class="container">
                 <div class="header__content-left">
                     <div class="menu--product-categories">
-                        <div class="menu__toggle"><i class="icon-menu"></i><span> Shop by Department</span></div>
+                        <!-- <div class="menu__toggle"><i class="icon-menu"></i><span> Shop by Department</span></div> -->
+                        <div class="menu__toggle"><span class="wocly-logo"> Wocly</span></div>
                         <div class="menu__content">
                             {% comment %} <ul class="menu--dropdown">
                                 <li><a href="#"><i class="icon-star"></i> Hot Promotions</a>
@@ -1049,8 +1052,8 @@
                     <h4 class="widget-title">Contact us</h4>
                     <div class="widget_content">
                         <p>Call us 24/7</p>
-                        <h3>1800 97 97 69</h3>
-                        <p>502 New Design Str, Melbourne, Australia <br><a href="http://nouthemes.net/cdn-cgi/l/email-protection#7e1d11100a1f1d0a3e131f0c0a180b0c07501d11"><span class="__cf_email__" data-cfemail="d2b1bdbca6b3b1a692bfb3a0a6b4a7a0abfcb1bd">[email&#160;protected]</span></a></p>
+                        <h3>+994 77 605 77 75</h3>
+                        <p>AZ1000, Baku/Azerbaijan</p>
                         <ul class="ps-list--social">
                             <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -1064,8 +1067,6 @@
                     <ul class="ps-list--link">
                         <li><a href="#">Policy</a></li>
                         <li><a href="#">Term & Condition</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Return</a></li>
                         <li><a href="faqs.html">FAQs</a></li>
                     </ul>
                 </aside>
@@ -1084,7 +1085,6 @@
                         <li><a href="#">Our Press</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
                         <li><a href="my-account.html">My account</a></li>
-                        <li><a href="shop-default.html">Shop</a></li>
                     </ul>
                 </aside>
             </div>
@@ -1103,8 +1103,24 @@
                 </p>
             </div> {% endcomment %}
             <div class="ps-footer__copyright">
-                <p>© 2018 Martfury. All Rights Reserved</p>
-                <p><span>We Using Safe Payment For:</span><a href="#"><img src="{% static 'img/payment-method/1.jpg' %}" alt=""></a><a href="#"><img src="{% static 'img/payment-method/2.jpg' %}" alt=""></a><a href="#"><img src="{% static 'img/payment-method/3.jpg' %}" alt=""></a><a href="#"><img src="img/payment-method/4.jpg" alt=""></a><a href="#"><img src="img/payment-method/5.jpg" alt=""></a></p>
+                <p>© 2022 Wocly. All Rights Reserved</p>
+                <div class="payments">
+                    <p>We Using Safe Payment For:</p>
+                    <div class="pays">
+                        <div class="mastercard">
+                            <img src="../media/payment/mastercard1.png" alt="">
+                        </div>
+                        <div class="visa">
+                            <img src="../media/payment/visa.png" alt="">
+                        </div>
+                        <div class="mpay">
+                            <img src="../media/payment/mpay.png" alt="">
+                        </div>
+                        <div class="million">
+                            <img src="../media/payment/million.png" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

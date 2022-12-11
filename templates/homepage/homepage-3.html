@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
+<head>
+    <link rel="stylesheet" href="../../static/css/sako.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
     <div id="homepage-3">
         {% csrf_token %}
 
@@ -31,109 +38,12 @@
             <img src="../../media/home_img/banner.jpg" alt="">
         </div>
         
-        <div class="ps-site-features">
-            <div class="container">
-                <div class="ps-block--site-features ps-block--site-features-2">
-                    <div class="ps-block__item">
-                        <div class="ps-block__left"><i class="icon-rocket"></i></div>
-                        <div class="ps-block__right">
-                            <h4>Free Delivery</h4>
-                            <p>For all oders over $99</p>
-                        </div>
-                    </div>
-                    <div class="ps-block__item">
-                        <div class="ps-block__left"><i class="icon-sync"></i></div>
-                        <div class="ps-block__right">
-                            <h4>90 Days Return</h4>
-                            <p>If goods have problems</p>
-                        </div>
-                    </div>
-                    <div class="ps-block__item">
-                        <div class="ps-block__left"><i class="icon-credit-card"></i></div>
-                        <div class="ps-block__right">
-                            <h4>Secure Payment</h4>
-                            <p>100% secure payment</p>
-                        </div>
-                    </div>
-                    <div class="ps-block__item">
-                        <div class="ps-block__left"><i class="icon-bubbles"></i></div>
-                        <div class="ps-block__right">
-                            <h4>24/7 Support</h4>
-                            <p>Dedicated support</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="ps-promotions">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="{% static 'img/promotions/home-3-1.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="{% static 'img/promotions/home-3-2.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="{% static 'img/promotions/home-3-3.jpg' %}" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        
-        <!-- section 1  -->
-        <div class="sec1 container">
-            <div class="sec1Text">
-                <h1>Get Quality Service</h1>
-                <p>You can see the quality of the service providers you get offers from, thanks to the real customer reviews they received in their previous jobs, and you can make your decision with confidence.</p>
-            </div>
-            <div class="sec1Img">
-                <img src="../../media/home_img/quality.png" alt="">
-            </div>
-        </div>
-
-        <!-- section 2  -->
-        <div class="sec2">
-            <div class="sec1 container">
-                <div class="sec1Img">
-                    <img src="../../media/home_img/savetime.png" alt="">
-                </div>
-                <div class="sec1Text">
-                    <h1>Save Time</h1>
-                    <p>Don't bother going from shop to shop or looking for references from people you know for the service you are looking for. Let the offers come to your pocket, keep your time with your loved ones.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- section 3  -->
-        <div class="sec3">
-            <div class="sec1 container">
-                <div class="sec1Text">
-                    <h1>Be Guaranteed</h1>
-                    <p>In order for you to receive service with peace of mind, the works you choose from Armut are under our guarantee.</p>
-                </div>
-                <div class="sec1Img">
-                    <img src="../../media/home_img/guarantee.png" alt="">
-                </div>
-            </div>
-        </div>
-
-        <!-- section 4  -->
-        <div class="sec2 sec4">
-            <div class="sec1 container">
-                <div class="sec1Img">
-                    <img src="../../media/home_img/easyuse.png" alt="">
-                </div>
-                <div class="sec1Text">
-                    <h1>Use Easily</h1>
-                    <p>Answer your questions in one minute, prepared specifically for the service you will receive, and easily handle your pending work.</p>
-                </div>
-            </div>
-        </div>
-
         <div class="ps-deal-of-day">
-            <div class="ps-container">
+            <!-- <div class="ps-container">
                 <div class="ps-section__header">
                     <div class="ps-block--countdown-deal">
                         <div class="ps-block__left">
-                            <h3>Popular Products</h3>
+                            <h3>Popular Employees</h3>
                         </div>
                         {% comment %} <div class="ps-block__right">
                             <figure>
@@ -146,7 +56,7 @@
                                 </ul>
                             </figure>
                         </div> {% endcomment %}
-                    </div><a href="shop-default.html">View all</a>
+                    </div><a href="shop-default.html" class="viewAll">View all</a>
                 </div>
                 <div class="ps-section__content">
                     <div class="ps-carousel--nav owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="true" data-owl-item="5" data-owl-item-xs="2" data-owl-item-sm="3" data-owl-item-md="4" data-owl-item-lg="4" data-owl-item-xl="5" data-owl-duration="1000" data-owl-mousedrag="on">
@@ -227,8 +137,193 @@
                         {% endfor %}
                     </div>
                 </div>
+            </div> -->
+        
+        <!-- custom employees  -->
+        <div class="employeesSection">
+            <div class="ps-container">
+                <div class="ps-section__header">
+                    <div class="ps-block--countdown-deal">
+                        <div class="ps-block__left">
+                            <h3>Popular Employees</h3>
+                        </div>
+                    </div><a href="shop-default.html" class="viewAll">View all</a>
+                </div>
+            </div>
+            <div class="employeesContent ps-container">
+
+                <div class="workerBox">
+                    <div class="workerImg">
+                        <img src="../../media/employees/courier.jpg" alt="">
+                    </div>
+                    <div class="workerText">
+                        <h3>Ayaz Karimov</h3>
+                        <p>Courier</p>
+                        <div class="stars">
+                            &#9733; 	&#9733; 	&#9733; 	&#9733; 	&#9733;
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workerBox">
+                    <div class="workerImg">
+                        <img src="../../media/employees/designeer.jpg" alt="">
+                    </div>
+                    <div class="workerText">
+                        <h3>Sitara Hashimova</h3>
+                        <p>Designer</p>
+                        <div class="stars">
+                            &#9733; &#9733; &#9733; &#9733; &#9733; 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workerBox">
+                    <div class="workerImg">
+                        <img src="../../media/employees/bitux.jpg" alt="">
+                    </div>
+                    <div class="workerText">
+                        <h3>Igrar Hajizade</h3>
+                        <p>Programmer</p>
+                        <div class="stars">
+                            &#9733; 	&#9733; &#9733; &#9733; &#9733; 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workerBox">
+                    <div class="workerImg">
+                        <img src="../../media/employees/gardener.jpg" alt="">
+                    </div>
+                    <div class="workerText">
+                        <h3>Leyla Gasimova</h3>
+                        <p>Gardener</p>
+                        <div class="stars">
+                            &#9733; 	&#9733; 	&#9733; 	&#9733; &#9733; 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workerBox">
+                    <div class="workerImg">
+                        <img src="../../media/employees/housekeeper.jpg" alt="">
+                    </div>
+                    <div class="workerText">
+                        <h3>Vafa Valiyeva</h3>
+                        <p>Housekeeper</p>
+                        <div class="stars">
+                            &#9733; 	&#9733; 	&#9733; 	&#9733; 	&#9733;
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <!-- <div class="ps-site-features">
+            <div class="container">
+                <div class="ps-block--site-features ps-block--site-features-2">
+                    <div class="ps-block__item">
+                        <div class="ps-block__left"><i class="icon-rocket"></i></div>
+                        <div class="ps-block__right">
+                            <h4>Free Delivery</h4>
+                            <p>For all oders over $99</p>
+                        </div>
+                    </div>
+                    <div class="ps-block__item">
+                        <div class="ps-block__left"><i class="icon-sync"></i></div>
+                        <div class="ps-block__right">
+                            <h4>90 Days Return</h4>
+                            <p>If goods have problems</p>
+                        </div>
+                    </div>
+                    <div class="ps-block__item">
+                        <div class="ps-block__left"><i class="icon-credit-card"></i></div>
+                        <div class="ps-block__right">
+                            <h4>Secure Payment</h4>
+                            <p>100% secure payment</p>
+                        </div>
+                    </div>
+                    <div class="ps-block__item">
+                        <div class="ps-block__left"><i class="icon-bubbles"></i></div>
+                        <div class="ps-block__right">
+                            <h4>24/7 Support</h4>
+                            <p>Dedicated support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- <div class="ps-promotions">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="{% static 'img/promotions/home-3-1.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="{% static 'img/promotions/home-3-2.jpg' %}" alt=""></a>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 "><a class="ps-collection" href="#"><img src="{% static 'img/promotions/home-3-3.jpg' %}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+        <!-- section 1  -->
+        <div class="sec1 container">
+            <div class="sec1Text">
+                <h1>Get Quality Service</h1>
+                <p>You can see the quality of the service providers you get offers from, thanks to the real customer reviews they received in their previous jobs, and you can make your decision with confidence.</p>
+            </div>
+            <div class="sec1Img">
+                <img src="../../media/home_img/medal2.png" alt="">
             </div>
         </div>
+
+        <!-- section 2  -->
+        <div class="sec2">
+            <div class="sec1 container">
+                <div class="sec1Img">
+                    <img src="../../media/home_img/hourglass.png" alt="">
+                </div>
+                <div class="sec1Text">
+                    <h1>Save Time</h1>
+                    <p>Don't bother going from site to site or looking for references from people you know for the service you are looking for. Let the offers come to your pocket, keep your time with your loved ones.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- section 3  -->
+        <div class="sec3">
+            <div class="sec1 container">
+                <div class="sec1Text">
+                    <h1>Be Guaranteed</h1>
+                    <p>In order for you to receive service with peace of mind, the works you choose from Wocly are under our guarantee.</p>
+                </div>
+                <div class="sec1Img">
+                    <img src="../../media/home_img/policy.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- section 4  -->
+        <div class="sec2 sec4">
+            <div class="sec1 container">
+                <div class="sec1Img">
+                    <img src="../../media/home_img/easy.png" alt="">
+                </div>
+                <div class="sec1Text">
+                    <h1>Use Easily</h1>
+                    <p>Answer your questions in one minute, prepared specifically for the service you will receive, and easily handle your pending work.</p>
+                </div>
+            </div>
+        </div>
+
+        
         <div class="ps-section--gray">
             <div class="container">
                 {% for m_category in main_categories %}
