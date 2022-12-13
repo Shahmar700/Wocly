@@ -9,6 +9,10 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(50,157,156,1) 50%,
 padding: 10px !important;
 }
 
+::selection {
+    color: #7be495;
+    background: rgb(32,80,114);
+  }
 
 .form-control{
     background-color: #fff !important;
@@ -235,7 +239,10 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, 
     font-size: 16px;
 }
 
-
+.ps-footer__copyright{
+    display: flex;
+    align-items: center;
+}
 .ps-footer__copyright img{
     width: 65px;
     height: 45px;
@@ -313,6 +320,23 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, 
     background: linear-gradient(90deg, rgba(32,80,114,0.9037990196078431) 0%, rgba(50,157,156,1) 20%, rgba(50,157,156,1) 79%, rgba(32,80,114,0.8925945378151261) 100%);
     font-size: 20px;
 } */
+.myBtn{
+    background: rgb(50,157,156);
+    background: linear-gradient(90deg, rgba(50,157,156,1) 4%, rgba(60,167,155,1) 11%, rgba(123,228,149,1) 54%);
+    color: #205072;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid transparent !important;
+}
+.myBtn:hover{
+    background: rgb(32,80,114);
+    background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 75%, rgba(32,80,114,1) 100%);
+    color: #fff;
+    border: 1px solid #fff !important;
+}
+.myBtn.accInfo{
+    padding: 5px 25px !important;
+}
 #myBtn{
     background: rgb(50,157,156);
     background: linear-gradient(90deg, rgba(50,157,156,1) 4%, rgba(60,167,155,1) 11%, rgba(123,228,149,1) 54%);
@@ -355,8 +379,9 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, 
     margin-bottom: 25px;
 }
 
-.header__content-right span{
-    background-color: #7be495 !important;
+.header__content-right span:not(#amount_base){
+    display: none;
+    /* background-color: #7be495 !important; */
 }
 
 .ps-section__header h1{
@@ -365,3 +390,74 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, 
   .ps-newsletter h3{
     color: #fff !important;
   }
+
+.ps-section--shopping.ps-whishlist{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 30px 0;
+}
+
+.ps-section--shopping .ps-section__header{
+    padding-bottom: 15px;
+}
+.ps-whishlist .teamWorkers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.ps-section--shopping .workerContainer{
+    background-color: rgb(0,0,0, 0.4);
+    padding: 20px;
+    border-radius: 20px;
+    width: 23%;
+    min-width: 236px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.ps-section--shopping .workerContainer:hover{
+    transform: scale(1.06);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.ps-footer .widget-title{
+    color: #7be495;
+}
+
+
+/* Basket (card) dispay None */
+
+.ps-cart--mini{
+    display: none;
+}
+.icon-heart span{
+    display: none !important;
+}
+.ps-widget__content a{
+    font-family: 'Poppins', sans-serif !important;
+    border-radius: 10px !important;
+}
+.ps-widget__content ul{
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+.ps-widget__content ul a{
+    color: #fff !important;
+}
+.col-lg-8 h3{
+    font-family: 'Poppins', sans-serif !important;
+    background: rgb(222,230,227);
+    background: linear-gradient(90deg, rgba(222,230,227,1) 0%, rgba(86,197,150,1) 20%, rgba(86,197,150,1) 69%, rgba(222,230,227,1) 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* .ps-form--newsletter{
+    border: 1px solid red;
+}
+.ps-form--newsletter .row{
+    border: 1px solid yellow;
+}
+.ps-form--newsletter .row .ps-form__left{
+    border: 2px solid orange;
+} */

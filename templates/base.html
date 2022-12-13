@@ -232,7 +232,7 @@
                                 </div>
                                 <div class="ps-cart__footer">
                                     <h3>Sub Total:<strong><span id="amount_base"> ${{amount|floatformat:2}}</span></strong></h3>
-                                    <figure><a class="ps-btn" href="{% url 'product:showcart' %}">View Cart</a><a class="ps-btn" href="checkout.html">Checkout</a></figure>
+                                    <figure><a class="ps-btn myBtn" href="{% url 'product:showcart' %}">View Cart</a><a class="ps-btn myBtn" href="checkout.html">Checkout</a></figure>
                                 </div>
                             </div>
                         </div>
@@ -275,8 +275,12 @@
                 {% else %}
                 <div class="header__content-right">
                     <div class="header__actions">
-                        {% comment %} <a class="header__extra" href="#"><i class="icon-heart"></i><span><i>0</i></span></a>
-                        <div class="ps-cart--mini"><a class="header__extra" href="#"><i class="icon-bag2"></i><span><i>0</i></span></a>
+                        {% comment %} <a class="header__extra" href="#"><i class="icon-heart">
+
+                        </i>
+                        <span><i>0</i></span>
+                    </a>
+                        <!-- <div class="ps-cart--mini"><a class="header__extra" href="#"><i class="icon-bag2"></i><span><i>0</i></span></a>
                             <div class="ps-cart__content">
                                 <div class="ps-cart__items">
                                     <div class="ps-product--cart-mobile">
@@ -297,7 +301,7 @@
                                     <figure><a class="ps-btn" href="shopping-cart.html">View Cart</a><a class="ps-btn" href="checkout.html">Checkout</a></figure>
                                 </div>
                             </div>
-                        </div> {% endcomment %}
+                        </div> {% endcomment %} -->
                         <div class="ps-block--user-header">
                             <div class="ps-block__left"><i class="icon-user"></i></div>
                             <div class="ps-block__right"><a href="{% url 'accounts:login' %}">Login</a><a href="{% url 'accounts:register' %}">Register</a></div>

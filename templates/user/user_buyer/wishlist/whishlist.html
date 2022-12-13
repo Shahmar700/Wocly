@@ -3,8 +3,8 @@
 
 {% block body %}
 {% csrf_token %}
-    <div class="ps-page--simple">
-        <div class="ps-breadcrumb">
+    <div class="ps-page--simple myTeamPage">
+        <!-- <div class="ps-breadcrumb">
             <div class="container">
                 <ul class="breadcrumb">
                     <li><a href="index.html">Home</a></li>
@@ -12,13 +12,73 @@
                     <li>Whishlist</li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         <div class="ps-section--shopping ps-whishlist">
             <div class="container">
                 <div class="ps-section__header">
-                    <h1>Wishlist</h1>
+                    <h1>My Team</h1>
                 </div>
-                <div class="ps-section__content">
+                
+                <div class="teamWorkers">
+                    <div class="workerContainer">
+                        <div class="workerBox">
+                            <div class="workerImg">
+                                <img src="../../media/employees/designeer.jpg" alt="">
+                            </div>
+                            <div class="workerText">
+                                <h3>Sitara Hashimova</h3>
+                                <p>Designer</p>
+                                <div class="stars">
+                                    &#9733; &#9733; &#9733; &#9733; &#9733; 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workerContainer">
+                        <div class="workerBox">
+                            <div class="workerImg">
+                                <img src="../../media/employees/gardener.jpg" alt="">
+                            </div>
+                            <div class="workerText">
+                                <h3>Leyla Gasimova</h3>
+                                <p>Gardener</p>
+                                <div class="stars">
+                                    &#9733; 	&#9733; 	&#9733; 	&#9733; &#9733; 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workerContainer">
+                        <div class="workerBox">
+                            <div class="workerImg">
+                                <img src="../../media/employees/housekeeper.jpg" alt="">
+                            </div>
+                            <div class="workerText">
+                                <h3>Vafa Valiyeva</h3>
+                                <p>Housekeeper</p>
+                                <div class="stars">
+                                    &#9733; 	&#9733; 	&#9733; 	&#9733; 	&#9733;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workerContainer">
+                        <div class="workerBox">
+                            <div class="workerImg">
+                                <img src="../../media/employees/bitux.jpg" alt="">
+                            </div>
+                            <div class="workerText">
+                                <h3>Igrar Hajizade</h3>
+                                <p>Programmer</p>
+                                <div class="stars">
+                                    &#9733; 	&#9733; &#9733; &#9733; &#9733; 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="ps-section__content">
                     <div class="table-responsive">
                         <table class="table ps-table--whishlist ps-table--responsive">
                             <thead>
@@ -57,7 +117,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

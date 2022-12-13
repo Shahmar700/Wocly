@@ -7754,7 +7754,9 @@ textarea.form-control {
 }
 
 .ps-widget--account-dashboard .ps-widget__content ul li a:hover {
-  background-color: #fcb800;
+  /* background-color: #fcb800; */
+  background: rgb(32,80,114);
+  background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 100%);
   color: #fff;
 }
 
@@ -7763,11 +7765,14 @@ textarea.form-control {
 }
 
 .ps-widget--account-dashboard .ps-widget__content ul li.active {
-  background-color: #fcb800;
+  /* background-color: #fcb800; */
+  background: rgb(32,80,114);
+  background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 100%);
 }
 
 .ps-widget--account-dashboard .ps-widget__content ul li.active a {
-  color: #fff;
+  /* color: #fff; */
+  color: #7BE495 !important;
 }
 
 #nonlinear {
@@ -12905,9 +12910,6 @@ background: linear-gradient(0deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, r
   margin-bottom: 80px;
 }
 
-.ps-section--default .ps-section__header {
-  
-}
 
 .ps-section--default .ps-section__header h3 {
   margin-bottom: 0;

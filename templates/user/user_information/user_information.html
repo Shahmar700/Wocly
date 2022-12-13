@@ -19,12 +19,12 @@
                         <div class="ps-section__left">
                             <aside class="ps-widget--account-dashboard">
                                 <div class="ps-widget__header">
-                                    <img style="object-fit:cover;" src="{{request.user.get_avatar}}" alt="">
+                                    <!-- <img style="object-fit:cover;" src="{{request.user.get_avatar}}" alt=""> -->
                                     
-                                    <figure>
+                                    <!-- <figure>
                                         <figcaption>Hello {{request.user.first_name}}</figcaption>
                                         <p><a href="#"><span class="__cf_email__">{{request.user.email}}</span></a></p>
-                                    </figure>
+                                    </figure> -->
                                 </div>
                                 <div class="ps-widget__content">
                                     <ul>
@@ -32,8 +32,10 @@
                                         <li><a href="{% url 'product:notifications' %}"><i class="icon-alarm-ringing"></i> Notifications</a></li>
                                         <li><a href="{% url 'product:invoice' %}"><i class="icon-papers"></i> Invoices</a></li>
                                         {% comment %} <li><a href="{% url 'user:user_adress' request.user.id %}"><i class="icon-map-marker"></i> Address</a></li> {% endcomment %}
-                                        <li><a href="#"><i class="icon-store"></i> Recent Viewed Product</a></li>
-                                        <li><a href="{% url 'product:user_wishlist' %}"><i class="icon-heart"></i> Wishlist</a></li>
+                                        <li>
+                                            <!-- <a href="#"><i class="icon-store"></i> Recent Viewed Product</a> -->
+                                        </li>
+                                        <li><a href="{% url 'product:user_wishlist' %}"><i class="icon-heart"></i>My Team</a></li>
                                         <li><a href="{% url 'accounts:logout' %}"><i class="icon-power-switch"></i>Logout</a></li>
                                     </ul>
                                 </div>
@@ -85,7 +87,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group submit">
-                                            <button class="ps-btn" name="btn_buyer">Update</button>
+                                            <button class="ps-btn myBtn accInfo" name="btn_buyer">Update</button>
                                         </div>
                                     </div>
                                 </div>
@@ -163,14 +165,14 @@
                         <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 ">
                             <div class="ps-form__left">
                                 <h3>Newsletter</h3>
-                                <p>Subcribe to get information about products and coupons</p>
+                                <p>Subcribe to get information about coupons</p>
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 ">
                             <div class="ps-form__right">
                                 <div class="form-group--nest">
                                     <input class="form-control" type="email" placeholder="Email address">
-                                    <button class="ps-btn">Subscribe</button>
+                                    <button class="ps-btn subscribeBtn">Subscribe</button>
                                 </div>
                             </div>
                         </div>
