@@ -12,7 +12,8 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Martfury - Multipurpose Marketplace HTML5 Template + Admin Template</title>
+    <!-- <title>Martfury - Multipurpose Marketplace HTML5 Template + Admin Template</title> -->
+    <title>Wocly</title>
     <link href="../../../fonts.googleapis.com/css1070.css?family=Work+Sans:300,400,500,600,700&amp;amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/Linearicons/Linearicons/Font/demo-files/demo.css' %}">
@@ -63,8 +64,8 @@
         <div class="header__top">
             <div class="container">
                 <!-- <div class="header__left">
-                    <p>Welcome to Martfury Online Shopping Store !</p>
-                </div> -->
+                    <p>Welcome to Martfury Online Shopping Store </p>
+                </div>  -->
                 <div class="header__right">
                     {% comment %} <ul class="header__top-links"> {% endcomment %}
                         {% comment %} <li><a href="#">Store Location</a></li>
@@ -243,7 +244,7 @@
                                     <li><a href="{% url 'product:notifications' %}">Notifications</a></li>
                                     <li><a href="{% url 'product:invoice' %}">Invoices</a></li>
                                     {% comment %} <li><a href="{% url 'user:user_adress' request.user.id %}">Address</a></li> {% endcomment %}
-                                    <li><a href="recent-viewed-product.html">Recent Viewed Product</a></li>
+                                    <!-- <li><a href="recent-viewed-product.html">Recent Viewed Product</a></li> -->
                                     <li><a href="{% url 'product:user_wishlist' %}">Wishlist</a></li>
                                     <li class="ps-block__footer"><a href="{% url 'accounts:logout' %}">Logout</a></li>
                                 </ul>

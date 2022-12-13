@@ -9,6 +9,7 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(50,157,156,1) 50%,
 padding: 10px !important;
 }
 
+
 ::selection {
     color: #7be495;
     background: rgb(32,80,114);
@@ -446,10 +447,8 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, 
 }
 .col-lg-8 h3{
     font-family: 'Poppins', sans-serif !important;
-    background: rgb(222,230,227);
-    background: linear-gradient(90deg, rgba(222,230,227,1) 0%, rgba(86,197,150,1) 20%, rgba(86,197,150,1) 69%, rgba(222,230,227,1) 85%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-weight: 300;
 }
 
 /* .ps-form--newsletter{
@@ -461,3 +460,4 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, 
 .ps-form--newsletter .row .ps-form__left{
     border: 2px solid orange;
 } */
+

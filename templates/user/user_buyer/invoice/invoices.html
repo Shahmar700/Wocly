@@ -17,14 +17,14 @@
                     <div class="col-lg-4">
                         <div class="ps-section__left">
                             <aside class="ps-widget--account-dashboard">
-                                <div class="ps-widget__header">
+                                <!-- <div class="ps-widget__header">
                                     <img style="object-fit:cover;" src="{{request.user.get_avatar}}" alt="">
                                     
                                     <figure>
                                         <figcaption>Hello {{request.user.first_name}}</figcaption>
                                         <p><a href="#"><span class="__cf_email__" >{{request.user.email}}</span></a></p>
                                     </figure>
-                                </div>
+                                </div> -->
                                 <div class="ps-widget__content">
                                     <ul>
                                         <li><a href="{% url 'user:user_info' request.user.id %}"><i class="icon-user"></i> Account Information</a></li>
@@ -43,7 +43,7 @@
                         <div class="ps-section__right">
                             <div class="ps-section--account-setting">
                                 <div class="ps-section__header">
-                                    <h3>Invoices</h3>
+                                    <h3 class="invPageHeader">Invoices</h3>
                                 </div>
                                 <div class="ps-section__content">
                                     <div class="table-responsive">
@@ -91,7 +91,7 @@
                             <div class="ps-form__right">
                                 <div class="form-group--nest">
                                     <input class="form-control" type="email" placeholder="Email address">
-                                    <button class="ps-btn">Subscribe</button>
+                                    <button class="ps-btn subscribeBtn">Subscribe</button>
                                 </div>
                             </div>
                         </div>

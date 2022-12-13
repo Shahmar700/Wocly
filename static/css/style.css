@@ -3472,7 +3472,7 @@ textarea.form-control {
 }
 
 .ps-breadcrumb {
-  padding: 20px 0;
+  padding: 15px 0;
   background-color: #f1f1f1;
 }
 
@@ -6689,6 +6689,9 @@ textarea.form-control {
 .ps-block--user-account {
   position: relative;
 }
+.ps-block--user-account a{
+  color: #fff !important;
+}
 
 .ps-block--user-account i {
   font-size: 30px;
@@ -6705,7 +6708,8 @@ textarea.form-control {
 }
 
 .ps-block--user-account .ps-list--arrow li a:hover {
-  color: #fcb800;
+  /* color: #fcb800; */
+  color: #7BE495 !important;
 }
 
 .ps-block--user-account .ps-block__heading {
@@ -6731,6 +6735,8 @@ textarea.form-control {
   transition: all 0.4s ease;
   visibility: hidden;
   opacity: 0;
+  border-radius: 10px !important;
+  background-color: rgb(0, 0, 0, 0.5) !important;
 }
 
 .ps-block--user-account:hover .ps-block__content {
@@ -14919,6 +14925,7 @@ font-family: 'Poppins', sans-serif !important;
 
 .ps-section--account-setting .ps-table {
   border: 1px solid #eaeaea;
+  color: #fff;
 }
 
 .ps-section--account-setting .ps-table thead tr th {
@@ -14928,10 +14935,15 @@ font-family: 'Poppins', sans-serif !important;
   border: 1px solid #eaeaea;
   border-bottom: none;
   padding: 10px 15px;
+  color: #fff;
+  
 }
-
+.invPageHeader{
+  color: #fff !important;
+}
 .ps-section--account-setting .ps-table tr td {
   padding: 10px 15px;
+  color: #fff;
 }
 
 .ps-shop-by-brand {
@@ -18697,4 +18709,3 @@ transform: translate(-50%,-50%);
   padding: 2px;
   border-radius: 50%;
 }
-
