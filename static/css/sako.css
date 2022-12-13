@@ -298,3 +298,32 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, 
     height: 100%;
     object-fit: fill;
 }
+
+/* #myBtn{
+    background: rgb(32,80,114);
+    background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 75%, rgba(32,80,114,1) 100%);
+    border-radius: 10px;
+    font-size: 20px;
+    color: #fff;
+    transition: 0.2s;
+} */
+/* #myBtn:hover{
+    color: #7be495;
+    background: rgb(32,80,114);
+    background: linear-gradient(90deg, rgba(32,80,114,0.9037990196078431) 0%, rgba(50,157,156,1) 20%, rgba(50,157,156,1) 79%, rgba(32,80,114,0.8925945378151261) 100%);
+    font-size: 20px;
+} */
+#myBtn{
+    background: rgb(50,157,156);
+    background: linear-gradient(90deg, rgba(50,157,156,1) 4%, rgba(60,167,155,1) 11%, rgba(123,228,149,1) 54%);
+    color: #205072;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+#myBtn:hover{
+    background: rgb(32,80,114);
+    background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 75%, rgba(32,80,114,1) 100%);
+    color: #fff;
+    border: 1px solid #fff;
+}

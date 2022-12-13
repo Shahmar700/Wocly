@@ -12173,9 +12173,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .ps-form--account {
-  max-width: 430px;
+  max-width: 460px;
   margin: 0 auto;
-  padding-top: 130px;
+  padding-top: 50px !important;
 }
 
 .ps-form--account .ps-tab-list {
@@ -12265,6 +12265,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .ps-form--account .ps-form__content {
   padding: 30px 30px 0;
+  /* background: rgb(32,80,114);
+background: linear-gradient(0deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 75%, rgba(32,80,114,1) 100%); */
 }
 
 .ps-form--account .ps-form__content h5 {
@@ -12276,9 +12278,20 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .ps-form--account .ps-form__footer {
   padding: 30px 30px;
 }
+.ps-form__footer .ps-list--social a{
+  transition: 0.2s linear;
+}
+.ps-form__footer .ps-list--social a:hover{
+  transform: scale(1.1);
+}
+
 
 .ps-form--account .ps-tab {
-  background-color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+}
+#loginTxt{
+  color: #fff;
 }
 
 .ps-form--order-tracking {
@@ -12382,6 +12395,19 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .ps-form--subscribe-popup .ps-form__content {
   max-width: 360px;
   text-align: center;
+}
+
+.ps-form__content h5, p{
+  color: #fff !important;
+  font-size: 19px;
+  text-align: center;
+}
+.form-group label{
+  color: #fff !important;
+  font-size: 18px;
+}
+.form-group #remember-me{
+  color: #fff !important;
 }
 
 .ps-form--vendor-datetimepicker {
@@ -12523,7 +12549,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   align-items: center;
   padding-bottom: 30px;
 }
-
+.ps-tab .ps-form__footer ul a{
+  border-radius: 5px;
+}
 .ps-form--photo-search .ps-form__footer a {
   display: inline-block;
   margin-right: 10px;
@@ -14278,11 +14306,28 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .ps-my-account {
   min-height: 100vh;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
+  background: rgb(32,80,114);
+background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 75%, rgba(32,80,114,1) 100%);
+font-family: 'Poppins', sans-serif !important;
 }
-
+.ps-page--my-account .ps-breadcrumb{
+  background: rgb(50,157,156);
+  background: linear-gradient(90deg, rgba(50,157,156,1) 0%, rgba(72,181,152,1) 15%, rgba(86,197,150,1) 30%, rgba(123,228,149,1) 50%, rgba(86,197,150,1) 70%, rgba(72,181,152,1) 85%, rgba(50,157,156,1) 100%);
+}
 .ps-order-tracking {
   padding: 100px 0;
+}
+.ps-page--my-account .ps-breadcrumb a{
+  color: #205072;
+  font-size: 18px;
+}
+.ps-page--my-account .ps-breadcrumb a:hover{
+  color: #fff;
+}
+.ps-page--my-account .ps-breadcrumb li{
+  color: #fff;
+  font-size: 18px;
 }
 
 .ps-order-tracking .ps-section__header {

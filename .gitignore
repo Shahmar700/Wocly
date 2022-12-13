@@ -83,7 +83,7 @@ venv/
 # myenv/
 # myenv
 # .myenv
-media/
+# media/
 # PyBuilder
 target/
 
