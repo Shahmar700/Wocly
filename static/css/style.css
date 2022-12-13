@@ -14311,6 +14311,22 @@ background: linear-gradient(0deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, r
 background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 75%, rgba(32,80,114,1) 100%);
 font-family: 'Poppins', sans-serif !important;
 }
+/* All panels(breadcrumps) in all pages design */
+.ps-breadcrumb{
+  background: rgb(50,157,156);
+  background: linear-gradient(90deg, rgba(50,157,156,1) 0%, rgba(72,181,152,1) 15%, rgba(86,197,150,1) 30%, rgba(123,228,149,1) 50%, rgba(86,197,150,1) 70%, rgba(72,181,152,1) 85%, rgba(50,157,156,1) 100%);
+}
+.ps-breadcrumb a{
+  color: #205072 !important;
+  font-size: 18px !important;
+}
+.ps-breadcrumb a:hover{
+  color: #fff !important;
+}
+.ps-breadcrumb li{
+  color: #fff !important;
+  font-size: 18px !important;
+}
 .ps-page--my-account .ps-breadcrumb{
   background: rgb(50,157,156);
   background: linear-gradient(90deg, rgba(50,157,156,1) 0%, rgba(72,181,152,1) 15%, rgba(86,197,150,1) 30%, rgba(123,228,149,1) 50%, rgba(86,197,150,1) 70%, rgba(72,181,152,1) 85%, rgba(50,157,156,1) 100%);
@@ -16210,6 +16226,9 @@ font-family: 'Poppins', sans-serif !important;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+.header__content-right i{
+  color: #fff;
 }
 
 .header .header__actions > * {

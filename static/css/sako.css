@@ -327,3 +327,41 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, 
     color: #fff;
     border: 1px solid #fff;
 }
+.subscribeBtn{
+    background: rgb(50,157,156);
+    background: linear-gradient(90deg, rgba(50,157,156,1) 4%, rgba(60,167,155,1) 11%, rgba(123,228,149,1) 54%);
+    color: #205072;
+    font-size: 20px;
+    border-radius: 50px !important;
+    border: 1px solid transparent;
+    padding: 15px 30px !important;
+    margin-left: 5px;
+}
+.subscribeBtn:hover{
+    background: rgb(32,80,114);
+    background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 75%, rgba(32,80,114,1) 100%);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.registerActive li{
+    color: #fff;
+}
+.registerActive li.active{
+    color: 7be495;
+}
+
+.ps-tab{
+    margin-bottom: 25px;
+}
+
+.header__content-right span{
+    background-color: #7be495 !important;
+}
+
+.ps-section__header h1{
+    color: #fff !important;
+  }
+  .ps-newsletter h3{
+    color: #fff !important;
+  }
