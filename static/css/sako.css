@@ -461,3 +461,13 @@ background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 29%, 
     border: 2px solid orange;
 } */
 
+/* .FFF{
+    display: none !important;
+} */
+
+.ps-vendor-dashboard .ps-section__header{
+    padding: 50px 0;
+}
+.ps-vendor-dashboard .ps-section__header h3{
+    color: #fff;
+}

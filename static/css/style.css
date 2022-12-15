@@ -12713,9 +12713,7 @@ background: linear-gradient(0deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, r
 
 
 
-.list-dashboard{
 
-}
 .list-dashboard li{
   color: #fff;
   padding: 10px 0;
@@ -12732,17 +12730,24 @@ background: linear-gradient(0deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, r
   background-color: #242424;
   color: #fff;
   border: none;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
 .list-dashboard li button:hover{
-  background-color: #f05025;
+  /* background-color: #f05025; */
+  background: rgb(32,80,114);
+/* background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 100%); */
 }
 
 .list-dashboard .common-lies:hover
 {
-  background-color: #f05025;
+  /* background-color: #f05025; */
+  background: rgb(32,80,114);
+  background: linear-gradient(90deg, rgba(32,80,114,1) 0%, rgba(50,157,156,1) 50%, rgba(32,80,114,1) 100%);
   transition: .5s;
 }
+
 .list-dashboard .other-lies{
   background-color: #242424 ;
 }
@@ -12787,7 +12792,9 @@ background: linear-gradient(0deg, rgba(32,80,114,1) 0%, rgba(32,80,114,1) 26%, r
 }
 
 .active-dashboard{
-  background-color: #f05025;
+  /* background-color: #f05025; */
+  background-color: #7BE495;
+  color: rgb(32,80,114) !important;
 }
 
 .orders{
@@ -18695,6 +18702,8 @@ transform: translate(-50%,-50%);
 }
 .list-dashboard{
   background-color: #242424;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .ps-block--user-account{
   position: relative;
